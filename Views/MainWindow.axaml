@@ -6,7 +6,10 @@
         xmlns:views="clr-namespace:AdvancedModLoader.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AdvancedModLoader.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/smalllogo.ico"
+		ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
         Title="AdvancedModLoader">
         <views:MainView />
 </Window>
