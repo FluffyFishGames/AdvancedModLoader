@@ -13,6 +13,8 @@
 
 	<ItemGroup>
         <PackageReference Include="Avalonia" Version="11.0.10" />
+        <PackageReference Include="Avalonia.Labs.Controls" Version="11.0.10.1" />
+        <PackageReference Include="Avalonia.Labs.Lottie" Version="11.0.10.1" />
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />
         <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
@@ -20,4 +22,11 @@
 	      <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10" />
     </ItemGroup>
+
+
+	<ItemGroup>
+	  <Compile Update="Controls\xAsyncImage.axaml.cs">
+	    <DependentUpon>xAsyncImage.axaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
 </Project>

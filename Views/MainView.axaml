@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AdvancedModLoader.ViewModels"
+             xmlns:local="clr-namespace:AdvancedModLoader.Components"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AdvancedModLoader.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -23,5 +24,7 @@
 		<StackPanel Orientation="Vertical" Grid.Column="0" Grid.RowSpan="2" Background="{DynamicResource SidebarBackground}">
 			<Image HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Source="{DynamicResource Logo}" />
 		</StackPanel>
+		<local:LoadingIndicator Grid.Column="1"></local:LoadingIndicator>
+
 	</Grid>
 </UserControl>

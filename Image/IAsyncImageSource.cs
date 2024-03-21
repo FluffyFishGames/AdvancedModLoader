@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AdvancedModLoader.Image
 {
-    public interface IAsyncImage : INotifyPropertyChanged
+    public interface IAsyncImageSource : INotifyPropertyChanged
     {
         bool IsLoaded();
         bool IsLoading();

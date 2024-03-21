@@ -1,0 +1,4 @@
+﻿{
+  "Test": "Ich bin ein Test",
+  "Test2": [ "Ich bin {0} ein test", "Ich bin {0} zwei tests" ]
+}
