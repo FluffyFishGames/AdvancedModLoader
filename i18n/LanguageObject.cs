@@ -17,7 +17,11 @@ namespace AdvancedModLoader.i18n
         public object? Value0
         {
             get => _Value0;
-            private set => SetAndRaise(Value0Property, ref _Value0, value);
+            private set 
+            { 
+                SetAndRaise(Value0Property, ref _Value0, value);
+                this.RaisePropertyChanged<string>(TextProperty, "", Text);
+            }
         }
 
         public static readonly DirectProperty<LanguageObject, object?> Value1Property = AvaloniaProperty.RegisterDirect<LanguageObject, object?>(nameof(Value1),
@@ -63,7 +67,13 @@ namespace AdvancedModLoader.i18n
         {
             get
             {
-                return "";
+                var lines = Language.Instance[Key ?? ""];
+                var line = lines.Length > 0 ? (lines[0] ?? "") : (Key ?? "");
+                line = line.Replace("{0}", Value0?.ToString() ?? "");
+                line = line.Replace("{1}", Value1?.ToString() ?? "");
+                line = line.Replace("{2}", Value2?.ToString() ?? "");
+                line = line.Replace("{3}", Value3?.ToString() ?? "");
+                return line;
             }
         }
 

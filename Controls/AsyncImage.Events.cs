@@ -1,4 +1,5 @@
-﻿using Avalonia.Interactivity;
+﻿/*
+using Avalonia.Interactivity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,3 +42,4 @@ namespace AdvancedModLoader.Controls
         }
     }
 }
+*/

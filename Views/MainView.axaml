@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AdvancedModLoader.ViewModels"
              xmlns:local="clr-namespace:AdvancedModLoader.Components"
+			 xmlns:i18n="using:AdvancedModLoader.i18n"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AdvancedModLoader.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -25,6 +26,10 @@
 			<Image HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Source="{DynamicResource Logo}" />
 		</StackPanel>
 		<local:LoadingIndicator Grid.Column="1"></local:LoadingIndicator>
-
+		<StackPanel Orientation="Vertical" Grid.Column="1">
+			<TextBlock Text="{i18n:Lang Test2, {Binding TestValue}}" />
+			<Button Click="Button_Click">Add</Button>
+			<Button Click="Button_Click_1">Change</Button>
+		</StackPanel>
 	</Grid>
 </UserControl>

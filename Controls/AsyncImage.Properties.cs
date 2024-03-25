@@ -1,4 +1,5 @@
-﻿using Avalonia.Animation;
+﻿/*
+using Avalonia.Animation;
 using Avalonia.Labs.Controls;
 using Avalonia.Media;
 using Avalonia;
@@ -108,3 +109,4 @@ namespace AdvancedModLoader.Controls
         }
     }
 }
+*/

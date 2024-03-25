@@ -17,8 +17,6 @@ namespace AdvancedModLoader.i18n
     public class Language : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged; 
-        private const string IndexerName = "Item";
-        private const string IndexerArrayName = "Item[]";
         private Dictionary<string, string?[]>? Lines = null;
         public string? ActiveLanguage { get; private set; }
         public static Language Instance { get; set; } = new Language();
@@ -33,7 +31,7 @@ namespace AdvancedModLoader.i18n
             try
             {
                 var newLines = new Dictionary<string, string?[]>();
-                using (var stream = AssetLoader.Open(new Uri($"avares://AvaloniaLocalizationExample/Assets/i18n/{language}.json")))
+                using (var stream = AssetLoader.Open(new Uri($"avares://AdvancedModLoader/Assets/i18n/{language}.json")))
                 using (var json = JsonDocument.Parse(stream))
                 {
                     foreach (var obj in json.RootElement.EnumerateObject())
@@ -59,25 +57,25 @@ namespace AdvancedModLoader.i18n
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return false;
             }
         }
 
-        public string this[string key]
+        public string?[] this[string key]
         {
             get
             {
                 if (Lines != null && Lines.TryGetValue(key, out var res))
-                    return res[0]?.Replace("\\n", "\n") ?? $"{ActiveLanguage}:{key}";
+                    return res;
 
-                return $"{ActiveLanguage}:{key}";
+                return [$"{ActiveLanguage}:{key}"];
             }
         }
 
         public void Invalidate()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(IndexerName));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(IndexerArrayName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActiveLanguage"));
         }
     }
 }
