@@ -67,13 +67,7 @@ namespace AdvancedModLoader.i18n
         {
             get
             {
-                var lines = Language.Instance[Key ?? ""];
-                var line = lines.Length > 0 ? (lines[0] ?? "") : (Key ?? "");
-                line = line.Replace("{0}", Value0?.ToString() ?? "");
-                line = line.Replace("{1}", Value1?.ToString() ?? "");
-                line = line.Replace("{2}", Value2?.ToString() ?? "");
-                line = line.Replace("{3}", Value3?.ToString() ?? "");
-                return line;
+                return Language.Instance.GetString(Key, Value0, Value1, Value2, Value3);
             }
         }
 

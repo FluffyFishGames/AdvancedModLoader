@@ -8,4 +8,14 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void CloseClicked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        this.Close();
+    }
+
+    private void MinimizeClicked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        this.WindowState = WindowState.Minimized;
+    }
 }

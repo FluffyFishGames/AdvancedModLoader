@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace AdvancedModLoader.Components
+namespace AdvancedModLoader.Controls
 {
     public partial class LoadingIndicator : UserControl
     {

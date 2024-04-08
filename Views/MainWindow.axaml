@@ -3,6 +3,7 @@
         xmlns:vm="using:AdvancedModLoader.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvancedModLoader.Controls"
         xmlns:views="clr-namespace:AdvancedModLoader.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AdvancedModLoader.Views.MainWindow"
@@ -11,5 +12,23 @@
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaTitleBarHeightHint="-1"
         Title="AdvancedModLoader">
-        <views:MainView />
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<StackPanel Orientation="Vertical" Grid.Column="0" Grid.RowSpan="2" Background="{DynamicResource SidebarBackground}">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Source="{DynamicResource Logo}" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="0">
+			<local:WindowButton Classes="MinimizeButton" Click="MinimizeClicked" />
+			<local:WindowButton Classes="CloseButton" Click="CloseClicked" />
+		</StackPanel>
+		<views:MainView Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" />
+	</Grid>        
 </Window>

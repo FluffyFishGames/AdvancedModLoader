@@ -1,4 +1,5 @@
 ﻿{
+  "_PLURAL": "i != 1 ? 1 : 0",
   "Test": "I am a test",
-  "Test2": ["I am {0} a test", "I am {0} two test"]
+  "Test2": [ "Singular: I am {0:000000} a test", "Plural: I am {0:000000} two test" ]
 }

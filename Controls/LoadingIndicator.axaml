@@ -4,6 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:lottie="using:Avalonia.Labs.Lottie"
-             x:Class="AdvancedModLoader.Components.LoadingIndicator">
+             x:Class="AdvancedModLoader.Controls.LoadingIndicator">
 	<lottie:Lottie Path="/Assets/Loading.json" />
 </UserControl>

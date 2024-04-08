@@ -1,5 +1,4 @@
-﻿/*
-using Avalonia.Interactivity;
+﻿using Avalonia.Interactivity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +11,13 @@ namespace AdvancedModLoader.Controls
     public partial class AsyncImage
     {
         /// <summary>
-        /// Deines the <see cref="Opened"/> event
+        /// Defines the <see cref="Opened"/> event
         /// </summary>
         public static readonly RoutedEvent<RoutedEventArgs> OpenedEvent =
             RoutedEvent.Register<AsyncImage, RoutedEventArgs>(nameof(Opened), RoutingStrategies.Bubble);
 
         /// <summary>
-        /// Deines the <see cref="Failed"/> event
+        /// Defines the <see cref="Failed"/> event
         /// </summary>
         public static readonly RoutedEvent<AsyncImageFailedEventArgs> FailedEvent =
             RoutedEvent.Register<AsyncImage, AsyncImageFailedEventArgs>(nameof(Failed), RoutingStrategies.Bubble);
@@ -42,4 +41,3 @@ namespace AdvancedModLoader.Controls
         }
     }
 }
-*/

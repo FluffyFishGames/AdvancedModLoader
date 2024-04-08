@@ -1,5 +1,4 @@
-﻿/*
-using Avalonia.Animation;
+﻿using Avalonia.Animation;
 using Avalonia.Labs.Controls;
 using Avalonia.Media;
 using Avalonia;
@@ -86,8 +85,8 @@ namespace AdvancedModLoader.Controls
         /// </summary>
         public AsyncImageState State
         {
-            get => _state;
-            private set => SetAndRaise(StateProperty, ref _state, value);
+            get => _State;
+            private set => SetAndRaise(StateProperty, ref _State, value);
         }
 
         /// <summary>
@@ -109,4 +108,3 @@ namespace AdvancedModLoader.Controls
         }
     }
 }
-*/

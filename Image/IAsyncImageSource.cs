@@ -14,6 +14,6 @@ namespace AdvancedModLoader.Image
         bool IsLoaded();
         bool IsLoading();
         IImage LoadImage();
-        Task<IImage> LoadImageAsync(CancellationTokenSource token);
+        Task<IImage> LoadImageAsync(CancellationToken token);
     }
 }

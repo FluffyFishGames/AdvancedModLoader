@@ -3,4 +3,7 @@
     <!-- Add Resources Here -->
 	<SolidColorBrush x:Key="WindowBackground" Color="#28243b" />
 	<SolidColorBrush x:Key="SidebarBackground" Color="#1c1a2a" />
+	<SolidColorBrush x:Key="WindowButtonForeground" Color="#ffffff" />
+	<SolidColorBrush x:Key="WindowButtonCloseHover" Color="#c60a30" />
+	<SolidColorBrush x:Key="WindowButtonOtherHover" Color="#e5336e" />
 </ResourceDictionary>

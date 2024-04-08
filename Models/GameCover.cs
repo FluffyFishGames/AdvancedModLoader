@@ -1,7 +1,7 @@
-﻿/*
-using AdvancedModLoader.Image;
+﻿using AdvancedModLoader.Image;
 using Avalonia;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,9 +29,10 @@ namespace AdvancedModLoader.Models
         public IImage LoadImage()
         {
             Thread.Sleep(5000);
+            return new Bitmap("lethalcompany.png");
         }
 
-        public Task<IImage> LoadImageAsync(CancellationTokenSource token)
+        public Task<IImage> LoadImageAsync(CancellationToken token)
         {
             return Task<IImage>.Run(() =>
             {
@@ -40,4 +41,3 @@ namespace AdvancedModLoader.Models
         }
     }
 }
-*/

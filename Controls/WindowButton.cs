@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdvancedModLoader.Controls
 {
-    public enum AsyncImageState
+    public class WindowButton : Avalonia.Controls.Button
     {
-        Unloaded,
-        Loading,
-        Loaded,
-        Failed
     }
 }

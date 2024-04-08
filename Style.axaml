@@ -1,5 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="using:AdvancedModLoader.Controls">
     <Design.PreviewWith>
         <Border Padding="20">
             <!-- Add Controls for Previewer Here -->
@@ -7,6 +8,87 @@
     </Design.PreviewWith>
 	<Style Selector="Window">
 		<Setter Property="Background" Value="{DynamicResource WindowBackground}" />
+	</Style>
+
+	<Style Selector="local|AsyncImage">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="local:AsyncImage">
+				<Grid>
+					<Grid.Background>
+						<SolidColorBrush Color="Black" Opacity="0.5"/>
+					</Grid.Background>
+					<Image x:Name="PART_Image" />
+					<local:LoadingIndicator HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" x:Name="PART_Placeholder" />
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+	<Style Selector="local|WindowButton">
+		<Style Selector="^:not(:pointerover)">
+			<Style.Animations>
+				<Animation Duration="0:0:0.25" FillMode="Forward">
+					<KeyFrame Cue="100%">
+						<Setter x:SetterTargetType="Button" Property="Background" Value="#00000000"/>
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+		<Setter Property="Width" Value="24" />
+		<Setter Property="Height" Value="24" />
+		<Setter Property="Background" Value="#00000000" />
+	</Style>
+	<Style Selector="local|WindowButton.CloseButton">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Grid Background="{TemplateBinding Background}">
+						<Image Margin="5">
+							<DrawingImage>
+								<DrawingGroup ClipGeometry="M0,0 V512 H352 V0 H0 Z">
+									<GeometryDrawing Brush="{StaticResource WindowButtonForeground}" Geometry="F1 M352,512z M0,0z M242.72,256L342.79,155.93C355.07,143.65,355.07,123.74,342.79,111.45L320.55,89.21C308.27,76.93,288.36,76.93,276.07,89.21L176,189.28 75.93,89.21C63.65,76.93,43.74,76.93,31.45,89.21L9.21,111.45C-3.07,123.73,-3.07,143.64,9.21,155.93L109.28,256 9.21,356.07C-3.07,368.35,-3.07,388.26,9.21,400.55L31.45,422.79C43.73,435.07,63.65,435.07,75.93,422.79L176,322.72 276.07,422.79C288.35,435.07,308.27,435.07,320.55,422.79L342.79,400.55C355.07,388.27,355.07,368.36,342.79,356.07L242.72,256z" />
+								</DrawingGroup>
+							</DrawingImage>
+						</Image>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style Selector="^:pointerover">
+			<Style.Animations>
+				<Animation Duration="0:0:0" FillMode="Forward">
+					<KeyFrame Cue="100%">
+						<Setter x:SetterTargetType="Button" Property="Background" Value="{StaticResource WindowButtonCloseHover}"/>
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+	</Style>
+	<Style Selector="local|WindowButton.MinimizeButton">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Grid Background="{TemplateBinding Background}">
+						<Image Margin="5">
+							<DrawingImage>
+								<DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+									<GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M512,512z M0,0z M480,480L32,480C14.3,480 0,465.7 0,448 0,430.3 14.3,416 32,416L480,416C497.7,416 512,430.3 512,448 512,465.7 497.7,480 480,480z" />
+								</DrawingGroup>
+							</DrawingImage>
+						</Image>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style Selector="^:pointerover">
+			<Style.Animations>
+				<Animation Duration="0:0:0" FillMode="Forward">
+					<KeyFrame Cue="100%">
+						<Setter x:SetterTargetType="Button" Property="Background" Value="{StaticResource WindowButtonOtherHover}"/>
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
 	</Style>
 	<!-- Add Styles Here -->
 </Styles>
